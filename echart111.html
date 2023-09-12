@@ -36,7 +36,7 @@
     <div class="row">
         <!-- Input field -->
         <div class="col-md-10">
-            <input type="text" class="form-control" id="stockCodeInput" placeholder="输入股票代码">
+            <input type="text" class="form-control" id="stockCodeInput" placeholder="输入股票代码(example: HK.00700), 只支持港股">
         </div>
         
         <!-- Confirm button -->
@@ -1160,7 +1160,7 @@ stockCode = "HK.00700"
    sum += data0.values[i - j][1];
    //alert(sum);
   }
-  result.push(sum / dayCount);
+  result.push(Number((sum / dayCount).toFixed(2)));
   // alert(result);
   }
   return result;
