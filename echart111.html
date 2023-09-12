@@ -65,6 +65,8 @@ https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js
       $("#confirmButton").click(function() {
           // 获取输入框的值
           var stockCode = $("#stockCodeInput").val();
+          stockCode = stockCode.toUpperCase();
+          $("#stockCodeInput").val(stockCode);
 
           // 请求的数据
           let data = {
@@ -1169,7 +1171,8 @@ stockCode = "HK.00700"
  option = {
   title: { //标题
   text: stockCode,
-  left: 0
+  left: 0,
+  top: 0
   },
   tooltip: { //提示框
   trigger: 'axis', //触发类型：坐标轴触发
@@ -1178,7 +1181,8 @@ stockCode = "HK.00700"
   }
   },
   legend: { //图例控件，点击图例控制哪些系列不现实
-  data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30', 'REHAB']
+  data: ['日K', 'MA5', 'MA10', 'MA20', 'MA30', 'REHAB'],
+  top: 25
   },
   grid: { //直角坐标系
   show:true,
